@@ -50,6 +50,7 @@ struct ContentView : View {
             }
             /// Subreddit selection `Popover`
             .popover(isPresented: $showSubredditSheet, attachmentAnchor: .point(UnitPoint(x: 20, y: 20))) {
+                Spacer()
                 HStack(spacing: 0) {
                     Text("r/")
                     TextField("Subreddit", text: self.$subreddit) {
@@ -61,26 +62,30 @@ struct ContentView : View {
                 .padding()
                 .background(Color("popover"))
                 .cornerRadius(10)
-               
-                ForEach(self.history, id: \.self) { history in
-                    Button(action: {
-                        self.subreddit = history
-                        self.showSubredditSheet.toggle()
-                        self.updateHistory()
-                    })
-                    {
-                        Text(history)
+                List {
+                    ForEach(self.history, id: \.self) { history in
+                            Button(action: {
+                                self.subreddit = history
+                                self.showSubredditSheet.toggle()
+                                self.updateHistory()
+                            })
+                            {
+                                Text(history)
+                            }
+                        }
                     }
-                }
             }
             Text("Select a post")
         }
     }
     
     func updateHistory() {
-        self.history[2] = self.history[1]
-        self.history[1] = self.history[0]
-        self.history[0] = self.subreddit
+        if self.subreddit != self.history[0] {
+            self.history[2] = self.history[1]
+            self.history[1] = self.history[0]
+            self.history[0] = self.subreddit
+        }
+        
     }
     
 }
