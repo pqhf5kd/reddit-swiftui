@@ -20,20 +20,37 @@ struct ContentView : View {
     @EnvironmentObject private var state: ContentViewState
     
     var body: some View {
-        NavigationView {
-            /// Load the posts
-            RequestView(Listing.self, Request {
-                Url(API.subredditURL(state.subreddit, sortBy))
-                Query(["raw_json":"1"])
-            }) { listing in
-                PostList(posts: listing?.posts ?? [], subreddit: self.state.subreddit, sortBy: self.state.sortBy, isLoading: false, selectedPostId: self.$selectedPostId)
+        HStack{
+            List {
+                Text("Recent")
+                    ForEach(state.history, id: \.self) { history in
+                        Button(action: {
+                            self.state.subreddit = history
+                            self.updateHistory()
+                        })
+                        {
+                            Text(history)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                    }
+                }
+            .frame(width: 200)
+    
+            NavigationView {
+                /// Load the posts
+                RequestView(Listing.self, Request {
+                    Url(API.subredditURL(state.subreddit, sortBy))
+                    Query(["raw_json":"1"])
+                }) { listing in
+                    PostList(posts: listing?.posts ?? [], subreddit: self.state.subreddit, sortBy: self.state.sortBy, isLoading: false, selectedPostId: self.$selectedPostId)
+                            .frame(minWidth: 300)
+                    /// Spinner when loading
+                    PostList(posts: [], subreddit: self.state.subreddit, sortBy: self.state.sortBy, isLoading: true, selectedPostId: self.$selectedPostId)
                         .frame(minWidth: 300)
-                /// Spinner when loading
-                PostList(posts: [], subreddit: self.state.subreddit, sortBy: self.state.sortBy, isLoading: true, selectedPostId: self.$selectedPostId)
-                .frame(minWidth: 300)
+                }
+                Text("Select a post")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            Text("Select a post")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .touchBar {
             /*Picker("Sort By", selection: $state.sortBy) {
@@ -43,5 +60,19 @@ struct ContentView : View {
              }*/
             Text("Hello, World!")
         }
+        
+        
     }
+    
+    func updateHistory() {
+        if let historyPosition = state.history.firstIndex(of: state.subreddit)
+        {
+            state.history.remove(at: historyPosition)
+            state.history.insert(state.subreddit, at: 0)
+        } else {
+            state.history.insert(state.subreddit, at: 0)
+        }
+        
+    }
+
 }

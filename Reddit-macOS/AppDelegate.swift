@@ -78,6 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSToolbarDelegate, NSTextFie
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if commandSelector == #selector(NSResponder.insertNewline(_:)) {
             state.subreddit = textView.string.replacingOccurrences(of: "r/", with: "").replacingOccurrences(of: " ", with: "")
+            updateHistory()
             return true
         }
         return false
@@ -93,6 +94,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSToolbarDelegate, NSTextFie
 
     func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
         return self.toolbarDefaultItemIdentifiers(toolbar)
+    }
+    
+    func updateHistory() {
+        if let historyPosition = state.history.firstIndex(of: state.subreddit)
+        {
+            state.history.remove(at: historyPosition)
+            state.history.insert(state.subreddit, at: 0)
+        } else {
+            state.history.insert(state.subreddit, at: 0)
+        }
+        
     }
 }
 
