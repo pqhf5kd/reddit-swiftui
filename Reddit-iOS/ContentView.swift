@@ -80,12 +80,13 @@ struct ContentView : View {
     }
     
     func updateHistory() {
-        if self.subreddit != self.history[0] {
-            self.history[2] = self.history[1]
-            self.history[1] = self.history[0]
-            self.history[0] = self.subreddit
+        if let historyPosition = history.firstIndex(of: subreddit)
+        {
+            history.remove(at: historyPosition)
+            history.insert(self.subreddit, at: 0)
+        } else {
+            history.insert(self.subreddit, at: 0)
         }
         
     }
-    
 }
