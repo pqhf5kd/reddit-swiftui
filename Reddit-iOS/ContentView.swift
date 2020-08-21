@@ -61,29 +61,16 @@ struct ContentView : View {
                 .padding()
                 .background(Color("popover"))
                 .cornerRadius(10)
-                Button(action: {
-                    self.subreddit = self.history[0]
-                    self.showSubredditSheet.toggle()
-                    self.updateHistory()
-                })
-                {
-                    Text(self.history[0])
-                }
-                Button(action: {
-                    self.subreddit = self.history[1]
-                    self.showSubredditSheet.toggle()
-                    self.updateHistory()
-                })
-                {
-                    Text(self.history[1])
-                }
-                Button(action: {
-                    self.subreddit = self.history[2]
-                    self.showSubredditSheet.toggle()
-                    self.updateHistory()
-                })
-                {
-                    Text(self.history[2])
+               
+                ForEach(self.history, id: \.self) { history in
+                    Button(action: {
+                        self.subreddit = history
+                        self.showSubredditSheet.toggle()
+                        self.updateHistory()
+                    })
+                    {
+                        Text(history)
+                    }
                 }
             }
             Text("Select a post")
