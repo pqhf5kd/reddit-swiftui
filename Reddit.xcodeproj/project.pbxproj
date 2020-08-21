@@ -20,6 +20,9 @@
 		26C1D7FB22E33FD40057DED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FA22E33FD40057DED1 /* Assets.xcassets */; };
 		26C1D7FE22E33FD40057DED1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FD22E33FD40057DED1 /* Preview Assets.xcassets */; };
 		26C1D80122E33FD40057DED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FF22E33FD40057DED1 /* LaunchScreen.storyboard */; };
+		33114DD624EE677100D42BF4 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33114DD524EE677100D42BF4 /* UserData.swift */; };
+		33114DD724EE677100D42BF4 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33114DD524EE677100D42BF4 /* UserData.swift */; };
+		33114DD824EE677100D42BF4 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33114DD524EE677100D42BF4 /* UserData.swift */; };
 		B508E10022F8F6F7002C4C76 /* banner.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B508E0FF22F8F6F7002C4C76 /* banner.jpeg */; };
 		B5145A1F22EFD4E6009237BD /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26746F0A22ECD4DC00A57918 /* CommentsView.swift */; };
 		B5145A2122EFD557009237BD /* MetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E60CB522EFD2A000A0075B /* MetadataView.swift */; };
@@ -146,6 +149,9 @@
 		26C1D7FD22E33FD40057DED1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26C1D80022E33FD40057DED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26C1D80222E33FD40057DED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33114DD324EE677100D42BF4 /* Reddit-watchOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reddit-watchOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		33114DD424EE677100D42BF4 /* Reddit-watchOS WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reddit-watchOS WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
+		33114DD524EE677100D42BF4 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		B508E0FF22F8F6F7002C4C76 /* banner.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner.jpeg; sourceTree = "<group>"; };
 		B508E10322F8FA16002C4C76 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		B508E10422F8FA16002C4C76 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -311,6 +317,9 @@
 				26B69D1622E51448001AD18F /* Models */,
 				B511A2EC22EE8A900062B8D4 /* Views */,
 				B5712B9922F2604D00DFF152 /* SharedAssets.xcassets */,
+				33114DD524EE677100D42BF4 /* UserData.swift */,
+				33114DD324EE677100D42BF4 /* Reddit-watchOS-Bridging-Header.h */,
+				33114DD424EE677100D42BF4 /* Reddit-watchOS WatchKit App-Bridging-Header.h */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -585,9 +594,11 @@
 					};
 					B5A7595722EF97D6001FD4F1 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1160;
 					};
 					B5A7595A22EF97D6001FD4F1 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1160;
 					};
 					B5A7596922EF97D8001FD4F1 = {
 						CreatedOnToolsVersion = 11.0;
@@ -690,6 +701,7 @@
 				B538997222EFB0CD0008A937 /* WebView.swift in Sources */,
 				B5E60CB722EFD2FB00A0075B /* MetadataView.swift in Sources */,
 				B538997122EFB0CD0008A937 /* SpinnerView.swift in Sources */,
+				33114DD624EE677100D42BF4 /* UserData.swift in Sources */,
 				26746F0F22ECD94B00A57918 /* Comment.swift in Sources */,
 				26B69D1D22E52B7F001AD18F /* PostView.swift in Sources */,
 				26B69D1822E51451001AD18F /* Post.swift in Sources */,
@@ -705,6 +717,7 @@
 				B51542DE22F253C7000ADC16 /* SortBy.swift in Sources */,
 				B5712BAE22F2731600DFF152 /* PostList.swift in Sources */,
 				B51542E122F253C7000ADC16 /* MetadataView.swift in Sources */,
+				33114DD824EE677100D42BF4 /* UserData.swift in Sources */,
 				B51542F122F25C80000ADC16 /* ContentView.swift in Sources */,
 				B51542EC22F25C0E000ADC16 /* PostDetailView.swift in Sources */,
 				B51542E022F253C7000ADC16 /* Helpers.swift in Sources */,
@@ -745,6 +758,7 @@
 				B5E60CB322EFCC5500A0075B /* PostDetailView.swift in Sources */,
 				B574DF0C22EFB53B00A80981 /* PostView.swift in Sources */,
 				B561DE3522F3965E003AB95B /* API.swift in Sources */,
+				33114DD724EE677100D42BF4 /* UserData.swift in Sources */,
 				B5A7599B22EFA797001FD4F1 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,14 +1073,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FH9CW55WY5;
 				IBSC_MODULE = Reddit_watchOS_WatchKit_Extension;
 				INFOPLIST_FILE = "Reddit-watchOS WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Reddit-watchOS WatchKit App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 6.0;
@@ -1078,14 +1100,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FH9CW55WY5;
 				IBSC_MODULE = Reddit_watchOS_WatchKit_Extension;
 				INFOPLIST_FILE = "Reddit-watchOS WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Reddit-watchOS WatchKit App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 6.0;
@@ -1095,12 +1124,20 @@
 		B5A7598922EF97D9001FD4F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FH9CW55WY5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS";
 				PRODUCT_NAME = Reddit;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Reddit-watchOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1108,12 +1145,19 @@
 		B5A7598A22EF97D9001FD4F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FH9CW55WY5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS";
 				PRODUCT_NAME = Reddit;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Reddit-watchOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

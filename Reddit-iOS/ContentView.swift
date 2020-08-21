@@ -16,6 +16,8 @@ struct ContentView : View {
     @State private var showSortSheet: Bool = false
     @State private var showSubredditSheet: Bool = false
     
+    @State var history = ["iOSProgramming", "2", "3"]
+    
     var body: some View {
         NavigationView {
             /// Load the posts
@@ -52,14 +54,46 @@ struct ContentView : View {
                     Text("r/")
                     TextField("Subreddit", text: self.$subreddit) {
                         self.showSubredditSheet.toggle()
+                        self.updateHistory()
                     }
                 }
                 .frame(width: 200)
                 .padding()
                 .background(Color("popover"))
                 .cornerRadius(10)
+                Button(action: {
+                    self.subreddit = self.history[0]
+                    self.showSubredditSheet.toggle()
+                    self.updateHistory()
+                })
+                {
+                    Text(self.history[0])
+                }
+                Button(action: {
+                    self.subreddit = self.history[1]
+                    self.showSubredditSheet.toggle()
+                    self.updateHistory()
+                })
+                {
+                    Text(self.history[1])
+                }
+                Button(action: {
+                    self.subreddit = self.history[2]
+                    self.showSubredditSheet.toggle()
+                    self.updateHistory()
+                })
+                {
+                    Text(self.history[2])
+                }
             }
             Text("Select a post")
         }
     }
+    
+    func updateHistory() {
+        self.history[2] = self.history[1]
+        self.history[1] = self.history[0]
+        self.history[0] = self.subreddit
+    }
+    
 }
