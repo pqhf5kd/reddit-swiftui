@@ -12,6 +12,6 @@ import Combine
 /// An `ObservableObject` to store information selected in the `NSToolbar`
 final class ContentViewState: ObservableObject {
     @Published var subreddit: String = "swift"
-    @Published var history = ["iOSProgramming", "2", "3"]
+    @Published var history = ["iOSProgramming", "Apple", "macOSBeta"]
     @Published var sortBy: SortBy = .hot
 }

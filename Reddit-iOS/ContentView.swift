@@ -16,7 +16,7 @@ struct ContentView : View {
     @State private var showSortSheet: Bool = false
     @State private var showSubredditSheet: Bool = false
     
-    @State var history = ["iOSProgramming", "2", "3"]
+    @State var history = ["iOSProgramming", "Apple", "macOSBeta"]
     
     var body: some View {
         NavigationView {
